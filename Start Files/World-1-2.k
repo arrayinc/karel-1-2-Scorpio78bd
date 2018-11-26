@@ -4,6 +4,7 @@
  * Uh oh. We've got some potholes. Ewww.
  */
 
+
 import "turns";
 
 function FillPotholes(){
@@ -17,10 +18,16 @@ function FillPotholes(){
 }
 	
 function fillPothole(){
+	if(rightIsClear()){
 	turnRight();
 	move();
-	putBeeper();
-	turnAround();
-	move();
-	turnRight();
+
+		if(noBeepersPresent()){
+			putBeeper();
+		}	
+
+		turnAround();
+		move();
+		turnRight();
+	}
 }
